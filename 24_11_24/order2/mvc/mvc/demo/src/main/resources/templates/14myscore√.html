@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>积分兑换宠物用品</title>
+    <style>
+        /* 顶部导航栏样式 */
+        .top-nav {
+            background-image: linear-gradient(to right, white, orange);
+            height: 20px;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98%;
+            z-index: 3;
+        }
+
+        /* 左侧导航栏样式 */
+        .left-nav {
+            background-image: linear-gradient(to right, white, orange);
+            width: 200px;
+            height: calc(100% - 40px);
+            position: fixed;
+            top: 40px;
+            left: 0;
+            z-index: 1;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-nav a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .left-nav a:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        .content {
+            margin-left: 250px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #points {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        .product {
+            display: inline-block;
+            width: 200px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h2, .product p {
+            margin: 0;
+            padding: 5px;
+        }
+
+        .product h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .product button.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <!-- 左侧导航栏图标和首页链接 -->
+        <div style="float: left;">
+            <a href="#"><img src="icon.png" alt="Logo"></a>
+            <a href="#">首页</a>
+        </div>
+
+        <!-- 右侧个人中心和积分兑换 -->
+        <div style="float: right;">
+            <a href="#">个人中心</a>
+            <a href="#">积分兑换</a>
+        </div>
+    </div>
+
+    <div class="left-nav">
+        <!-- 左侧导航栏垂直向下显示的功能 -->
+        <a href="#">用户信息</a>
+        <a href="#">我的订单</a>
+        <a href="#">我的评论</a>
+        <a href="#">我的积分</a>
+    </div>
+
+    <div class="content">
+        <h1>积分兑换宠物用品</h1>
+
+        <p>您目前拥有 <span id="points">100</span> 积分</p>
+
+        <div class="product">
+            <img src="pet-food.jpg" alt="宠物食品">
+            <h2>宠物食品</h2>
+            <p>价格：<span class="price">50</span> 积分</p>
+            <button class="exchange">兑换</button>
+        </div>
+
+        <div class="product">
+            <img src="pet-bed.jpg" alt="宠物床">
+            <h2>宠物床</h2>
+            <p>价格：<span class="price">100</span> 积分</p>
+            <button class="exchange">兑换</button>
+        </div>
+
+        <div class="product">
+            <img src="pet-toys.jpg" alt="宠物玩具">
+            <h2>宠物玩具</h2>
+            <p>价格：<span class="price">20</span> 积分</p>
+            <button class="exchange disabled">积分不足</button>
+        </div>
+
+        <script>
+            // 获取当前积分
+            let points = parseInt(document.getElementById('points').textContent);
+
+            // 获取所有兑换按钮
+            const exchangeBtns = document.querySelectorAll('.exchange');
+
+            // 遍历所有兑换按钮并为每个按钮添加点击事件
+            exchangeBtns.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    // 获取商品价格
+                    const price = parseInt(btn.previousElementSibling.previousElementSibling.textContent);
+
+                    // 检查用户积分是否足够
+                    if (points >= price) {
+                        // 扣除积分
+                        points -= price;
+                        document.getElementById('points').textContent = points;
+
+                        // 禁用按钮并修改按钮状态
+                        btn.classList.add('disabled');
+                        btn.disabled = true;
+
+                        // 发起积分兑换请求
+                        try {
+                            const response = await fetch('/useScore', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded',
+                                },
+                                body: `userId=1&scoreValue=${price}&psId=${btn.previousElementSibling.textContent}`
+                            });
+                            const result = await response.json();
+
+                            if (result.success) {
+                                alert('积分兑换成功！');
+                                // 兑换成功后跳转到 usescore.html
+                                window.location.href = 'usescore.html';
+                            } else {
+                                alert(result.message);
+                            }
+                        } catch (error) {
+                            console.error('Error:', error);
+                            alert('系统错误，请稍后再试。');
+                        }
+                    } else {
+                        // 积分不足，禁用按钮
+                        btn.classList.add('disabled');
+                        btn.disabled = true;
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>增加订单页面</title>
+    <style>
+        /* 原有样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4945d;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"],
+        .return-button {
+            background-color: #f5b971;
+            color: #fff;
+            cursor: pointer;
+            width: 48%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        input[type="submit"]:hover,
+        .return-button:hover {
+            background-color: #e6a864;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* 新增媒体查询，适应移动端显示 */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            input[type="submit"],
+            .return-button {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>增加订单</h2>
+    <form id="addOrderForm">
+        <label for="userID">用户ID</label>
+        <input type="text" id="userID" name="userID" placeholder="请输入用户ID" required>
+
+        <label for="psID">产品ID</label>
+        <input type="text" id="psID" name="psID" placeholder="请输入产品ID" required>
+
+        <div class="button-group">
+            <input type="submit" value="确认增加订单">
+            <input type="button" class="return-button" value="返回" onclick="window.location.href = 'order.html';"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('addOrderForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const userID = document.getElementById('userID').value;
+        const psID = document.getElementById('psID').value;
+
+        // 使用Fetch API发送增加订单请求
+        fetch('http://localhost:8082/createOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `userID=${encodeURIComponent(userID)}&psID=${encodeURIComponent(psID)}`
+        })
+            .then(response => response.json())
+            .then(result => {
+                if (result === 1) {
+                    alert("订单增加成功！");
+                    window.location.href = "order.html"; // 增加成功后跳转页面
+                } else {
+                    alert("增加订单失败，请重试！");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+
+</html>

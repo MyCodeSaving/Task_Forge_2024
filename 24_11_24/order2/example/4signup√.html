@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商家注册页面</title>
+    <style>
+        /* CSS样式用来美化页面 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 450px;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4945d;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"] {
+            background-color: #f5b971;
+            color: #fff;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e6a864;
+        }
+
+        /* 新增媒体查询，适应移动端显示 */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            input[type="tel"] {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            input[type="submit"] {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>商家注册</h2>
+    <form id="storeForm">
+        <label for="userID">用户ID</label>
+        <input type="text" id="userID" name="userID" placeholder="请输入用户ID" required>
+
+        <label for="username">商家名称</label>
+        <input type="text" id="username" name="username" placeholder="请输入商家名称" required>
+
+        <label for="phone">电话号码</label>
+        <input type="tel" id="phone" name="phone" placeholder="请输入电话号码" required>
+
+        <label for="password">密码</label>
+        <input type="password" id="password" name="password" placeholder="请输入密码" required>
+
+        <input type="submit" value="注册">
+    </form>
+</div>
+
+<script>
+    document.getElementById('storeForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const userID = document.getElementById('userID').value;
+        const username = document.getElementById('username').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+
+        fetch('http://localhost:8082/addStore', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `userID=${encodeURIComponent(userID)}&password=${encodeURIComponent(password)}&username=${encodeURIComponent(username)}&phone=${encodeURIComponent(phone)}`
+        })
+            .then(response => response.json())
+            .then(result => {
+                if (result === 1) {
+                    alert("注册成功！");
+                    window.location.href = "3signin3√.html"; // 注册成功后跳转到登录页面
+                } else if (result === 0) {
+                    alert("注册失败，请重试！");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+</html>

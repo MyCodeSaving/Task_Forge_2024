@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <title>首页</title>
+  <style>
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3; /* 设置一个较高的z-index值 */
+    }
+
+    /* 欢迎信息样式 */
+    .welcome-info {
+      background-color: #f8f8f800;
+      border-top: 1px solid #e7e7e700;
+      padding: 5px 10px;
+      text-align: right;
+      position: fixed;
+      top: 40px; /* 与顶部导航栏的高度一致 */
+      right: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);
+      width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 40px; /* 调整top值，使左侧导航栏显示在顶部导航栏下方*/
+      left: 0;
+      z-index: 1; /* 设置一个较低的z-index值 */
+    }
+
+    /* 左侧导航栏链接样式 */
+    .left-nav a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+    }
+
+    /* 页面内容样式 */
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      margin: 20px;
+      margin-top: 50px; 
+      margin-left: 300px; /* 调整与左侧导航栏的距离 */
+    }
+
+    .search-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .search-input {
+      width: 300px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .category-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 20px;
+    }
+
+    .category-item {
+      margin-right: 20px;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,.2);
+      border-radius: 10px;
+      transition: box-shadow .2s ease-in-out;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .product:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    }
+
+    .product img {
+      display: block;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .product h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      margin-bottom: 5px;
+    }
+
+    .product span {
+      color: #ff5000;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .product button {
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      background-color: #ff5000;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      outline: none;
+      transition: background-color .2s ease-in-out;
+    }
+
+    .product button:hover {
+      background-color: #E64000;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <!-- 左侧导航栏图标和首页链接 -->
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    
+    <!-- 右侧个人中心和积分兑换 -->
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <!-- 欢迎信息 -->
+  <div class="welcome-info" id="welcome-info">
+    <!-- 欢迎信息将通过JavaScript动态添加 -->
+  </div>
+  
+  <div class="left-nav">
+    <!-- 左侧导航栏垂直向下显示的功能 -->
+    <a href="#">宠物主食</a>
+    <a href="#">宠物零食</a>
+    <a href="#">宠物玩具</a>
+    <a href="#">宠物饰品</a>
+  </div>
+  <div>
+    
+   <div class="search-container">
+   <input type="text" class="search-input" placeholder="搜索...">
+     <button class="search-button">搜索</button>
+   </div>
+     
+        <div class="content">
+    <div class="product">
+        <a href="#" class="category-item">按销量排序：年销量/月销量</a>
+       </div>
+          </div>
+    <div class="content">
+        <div class="product">
+        <a href="#" class="category-item">按价格排序</a>
+    </div>
+      </div>
+
+    <div class="content">
+		<div class="product">
+			<img src="" alt="宠物用品1">
+			<div class="product-info">
+				<h3>宠物用品1</h3>
+
+				<p>价格：<span>19.99元</span></p>
+				<p>预计积分：<span>100</span></p>
+				<button>加入购物车</button>
+			</div>
+          </div>
+      </div>
+
+          <div class="content">
+		
+  </div>
+          
+    </div>  
+
+    <script>
+      // 假设用户登录状态为false
+      var isLoggedIn = false;
+    
+      // 获取欢迎信息元素
+      var welcomeInfo = document.getElementById('welcome-info');
+    
+      // 根据用户登录状态更新欢迎信息
+      if (isLoggedIn) {
+        welcomeInfo.innerHTML = '欢迎您，' + '用户名' + '！';
+      } else {
+        welcomeInfo.innerHTML = '您还未登录，';
+        var loginLink = document.createElement('a');
+        loginLink.href = "signin.html";
+        loginLink.innerHTML = '登录';
+        welcomeInfo.appendChild(loginLink);
+    
+        welcomeInfo.innerHTML += ' / ';
+    
+        var signupLink = document.createElement('a');
+        signupLink.href = "signup.html";
+        signupLink.innerHTML = '注册';
+        welcomeInfo.appendChild(signupLink);
+      }
+    </script>
+</body>
+</html>

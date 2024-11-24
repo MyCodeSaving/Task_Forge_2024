@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品管理页面</title>
+    <style>
+        /* 整体页面样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 顶部导航栏样式 */
+        .top-nav {
+            background-color: #f5b971;
+            height: 70px;
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* 左侧导航栏样式 */
+        .left-nav {
+            background-color: #f8d8a8;
+            width: 260px;
+            height: 100%;
+            position: fixed;
+            top: 90px;
+            left: 0;
+            padding-top: 50px;
+            box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-nav button {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5b971;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .left-nav button:hover {
+            background-color: #e6a864;
+            transform: scale(1.05);
+        }
+
+        /* 页面主体内容样式 */
+        .main-content {
+            margin-left: 280px;
+            padding: 60px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            max-width: 1000px;
+            margin-top: 120px;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            color: #d4945d;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            margin-top: 30px;
+            background-color: #f6e8c3;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                width: 90%;
+                padding: 20px;
+                margin-left: 0;
+            }
+
+            .top-nav {
+                font-size: 20px;
+            }
+
+            .left-nav {
+                width: 100%;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .left-nav button {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-nav">
+        商品管理系统
+    </div>
+    <div class="left-nav">
+        <button onclick="window.location.href = 'addpetsupply.html';">上架商品</button>
+        <button onclick="window.location.href = 'changepatsupply.html';">修改商品</button>
+        <button onclick="window.location.href = 'deletepetsupply.html';">下架商品</button>
+        <button onclick="window.location.href = 'displaystore.html';">返回</button>
+    </div>
+    <div class="main-content">
+        <h1>商品管理页面</h1>
+        <div class="info-label">
+            欢迎使用商品管理系统，您可以在这里上架、修改和下架商品。
+        </div>
+    </div>
+</body>
+
+</html>

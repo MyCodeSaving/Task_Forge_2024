@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <style>
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3;
+    }
+
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);
+      width: 200px;
+      height: calc(100% - 40px);
+      position: fixed;
+      top: 40px;
+      left: 0;
+      z-index: 1;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-nav a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .left-nav a:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    /* 内容区域样式 */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      padding-top: 60px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .edit-button {
+      background-color: orange;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .edit-button:hover {
+      background-color: darkorange;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .info label {
+      font-weight: bold;
+      width: 100px;
+      text-align: right;
+      margin-right: 15px;
+    }
+
+    .info .value,
+    .info input {
+      flex: 1;
+      font-size: 14px;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .save-button {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 20px auto 0;
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .save-button:hover {
+      background-color: darkgreen;
+    }
+
+    /* 注销按钮 */
+    .logout-button {
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 200px;
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .logout-button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <a href="#">用户信息</a>
+    <a href="#">我的订单</a>
+    <a href="#">我的评论</a>
+    <a href="#">我的积分</a>
+  </div>
+  
+  <div class="content">
+    <div class="user-profile">
+      <img src="avatar.png" alt="个人头像" class="avatar">
+      <button class="edit-button">修改</button>
+    </div>
+
+    <div class="info">
+      <label>用户ID:</label>
+      <span class="value" id="userID">123456789</span>
+    </div>
+    <div class="info">
+      <label>用户名:</label>
+      <input type="text" id="userName" value="John Doe">
+    </div>
+    <div class="info">
+      <label>手机号:</label>
+      <input type="text" id="userPhone" value="1234567890">
+    </div>
+    <div class="info">
+      <label>收货地址:</label>
+      <input type="text" id="userAddress" value="123 Main St">
+    </div>
+    <div class="info">
+      <label>性别:</label>
+      <input type="text" id="userSex" value="男">
+    </div>
+    <div class="info">
+      <label>生日:</label>
+      <input type="text" id="userBirth" value="1990-01-01">
+    </div>
+    <button class="save-button" id="saveButton">保存</button>
+    <button class="logout-button" id="logoutButton">注销账号</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 初始化用户信息
+      const userID = document.getElementById('userID').textContent.trim();
+      fetch('/getCurrentInfo?userType=customer&userID=' + userID)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('userName').value = data.username;
+          document.getElementById('userPhone').value = data.phone;
+          document.getElementById('userAddress').value = data.address;
+          document.getElementById('userSex').value = data.sex;
+          document.getElementById('userBirth').value = data.birthday;
+        })
+        .catch(error => console.error('获取用户信息失败:', error));
+
+      // 保存用户信息
+      document.getElementById('saveButton').addEventListener('click', function() {
+        const userID = document.getElementById('userID').textContent.trim();
+        const userName = document.getElementById('userName').value.trim();
+        const userPhone = document.getElementById('userPhone').value.trim();
+        const userAddress = document.getElementById('userAddress').value.trim();
+        const userSex = document.getElementById('userSex').value.trim();
+        const userBirth = document.getElementById('userBirth').value.trim();
+
+        fetch('/resetUserInfo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userID, userName, userPhone, userAddress, userSex, userBirth })
+        })
+          .then(response => response.text())
+          .then(result => {
+            alert(result === 'success' ? '用户信息修改成功' : '修改失败，请重试');
+          })
+          .catch(error => {
+            console.error('保存失败:', error);
+            alert('保存过程中出现问题，请稍后重试');
+          });
+      });
+
+      // 注销账号
+      document.getElementById('logoutButton').addEventListener('click', function() {
+        const userID = document.getElementById('userID').textContent.trim();
+        const userPassword = prompt('请输入密码以确认注销:');
+
+        if (userPassword) {
+          fetch('/cancelUser', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userID, userPassword })
+          })
+            .then(response => response.text())
+            .then(result => {
+              if (result === '1') {
+                alert('账号注销成功');
+                window.location.href = '/logout'; // 重定向到登录页或其他页面
+              } else {
+                alert('账号注销失败，请检查密码是否正确');
+              }
+            })
+            .catch(error => {
+              console.error('注销失败:', error);
+              alert('注销过程中出现问题，请稍后重试');
+            });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

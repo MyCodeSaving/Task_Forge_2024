@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发表评论</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3;
+    }
+
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);
+      width: 200px;
+      height: calc(100% - 40px);
+      position: fixed;
+      top: 40px;
+      left: 0;
+      z-index: 1;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-nav a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .left-nav a:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ffca2c;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <a href="#">用户信息</a>
+    <a href="#">我的订单</a>
+    <a href="#">我的评论</a>
+    <a href="#">我的积分</a>
+  </div>
+
+  <div class="content">
+    <h1>发表评论</h1>
+    <form action="/CommentServlet" method="post">
+      <label for="psId">商品ID:</label>
+      <input type="number" id="psId" name="psId" required>
+
+      <label for="userId">用户ID:</label>
+      <input type="number" id="userId" name="userId" required>
+
+      <label for="content">评论内容:</label>
+      <textarea id="content" name="content" rows="5" required></textarea>
+
+      <button type="submit">提交评论</button>
+    </form>
+  </div>
+</body>
+</html>

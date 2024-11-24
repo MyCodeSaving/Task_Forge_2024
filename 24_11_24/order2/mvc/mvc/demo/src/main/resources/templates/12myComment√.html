@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的评论</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3;
+    }
+
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);
+      width: 200px;
+      height: calc(100% - 40px);
+      position: fixed;
+      top: 40px;
+      left: 0;
+      z-index: 1;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-nav a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .left-nav a:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+
+    .rating i {
+      color: #ffc107;
+    }
+
+    .empty-row {
+      height: 20px;
+      background-color: #f8f9fa;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+    }
+
+    .product img {
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    .product h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <a href="#">用户信息</a>
+    <a href="#">我的订单</a>
+    <a href="#">我的评论</a>
+    <a href="#">我的积分</a>
+  </div>
+
+  <div class="content">
+    <h1>我的评论</h1>
+    <table>
+      <tr>
+        <th>宠物用品</th>
+        <th>价格</th>
+        <th>评价星级</th>
+        <th>评价内容</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="product">
+            <img src="pet-supplies-1.jpg" alt="宠物用品1">
+            <h3>宠物用品1</h3>
+          </div>
+        </td>
+        <td>$10</td>
+        <td>
+          <div class="rating">
+            ★★★★☆
+          </div>
+        </td>
+        <td>这个宠物用品真棒！质量很好，我的宠物非常喜欢！</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product">
+            <img src="pet-supplies-2.jpg" alt="宠物用品2">
+            <h3>宠物用品2</h3>
+          </div>
+        </td>
+        <td>$15</td>
+        <td>
+          <div class="rating">
+            ★★★★☆
+          </div>
+        </td>
+        <td>这个宠物用品还不错，性价比高，但是质量一般。</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商家登录</title>
+    <style>
+        /* 页面样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px; /* 可以根据需要调整高度 */
+        }
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            width: 55%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>商家登录</h2>
+        <form id="storeLoginForm">
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+
+            <div class="center">
+                <input type="submit" value="登录">
+            </div>
+          <div class="center"style="margin-top: 10px;">
+                <a href="signin3.html"><small>用户登录</small></a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('storeLoginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止默认提交行为
+            const userID = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/storeLogin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `userID=${encodeURIComponent(userID)}&password=${encodeURIComponent(password)}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result === "success") {
+                    alert("登录成功！");
+                    window.location.href = "/storeHome"; // 商家登录成功后跳转页面
+                } else if (result === "wrong_password") {
+                    alert("密码错误！");
+                } else if (result === "user_not_exist") {
+                    alert("用户不存在！");
+                } else {
+                    alert("登录失败，请重试！");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

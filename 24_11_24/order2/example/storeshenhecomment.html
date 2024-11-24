@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>删除评论页面</title>
+    <style>
+        /* CSS样式用来美化页面 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 450px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4945d;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            background-color: #f5b971;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            width: 48%;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #e6a864;
+        }
+
+        .return-button {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        .return-button:hover {
+            background-color: #b3b3b3;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* 媒体查询 */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>删除评论</h2>
+    <form id="deleteCommentForm">
+        <label for="userID">用户ID</label>
+        <input type="text" id="userID" name="userID" placeholder="请输入用户ID" required>
+
+        <label for="psID">产品ID</label>
+        <input type="text" id="psID" name="psID" placeholder="请输入产品ID" required>
+
+        <div class="button-group">
+            <button type="submit" class="button">删除评论</button>
+            <button type="button" class="button return-button" onclick="window.location.href = 'storecomment.html';">返回</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('deleteCommentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const userID = document.getElementById('userID').value;
+        const psID = document.getElementById('psID').value;
+
+        // 使用Fetch API发送删除评论请求
+        fetch('http://localhost:8082/deleteComment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `userID=${encodeURIComponent(userID)}&PsID=${encodeURIComponent(psID)}`
+        })
+            .then(response => response.json())
+            .then(result => {
+                if (result === 1) {
+                    alert("评论删除成功！");
+                    window.location.href = "storecomment.html";
+                } else {
+                    alert("评论删除失败，请重试！");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+
+</html>

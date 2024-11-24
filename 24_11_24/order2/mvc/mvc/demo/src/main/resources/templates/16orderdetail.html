@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>订单详情</title>
+  <style>
+    /* 样式表 */
+     /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 30px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3; /* 设置一个较高的z-index值 */
+    }
+    
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 50px; /* 调整top值，使左侧导航栏显示在顶部导航栏下方*/
+      left: 0;
+      z-index: 2; /* 设置一个较低的z-index值 */
+    }
+    
+    /* 左侧导航栏链接样式 */
+    .left-nav a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+      text-align:center;
+    }
+    
+    .content {
+      margin-left: 250px;
+      margin-top: 50px;
+      padding: 20px;
+    }
+    .order {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .order-status {
+      margin-bottom: 10px;
+    }
+    .order-status span {
+      font-weight: bold;
+    }
+    .order-status .fa {
+      margin-right: 5px;
+    }
+    .order-id {
+      margin-bottom: 5px;
+    }
+    .order-user-id {
+      margin-bottom: 5px;
+    }
+    .order-time {
+      color: #999;
+    }
+    .order-address {
+      margin-top: 10px;
+    }
+    //商品
+    table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+  </style>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="top-nav">
+    <!-- 左侧导航栏图标和首页链接 -->
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    
+    <!-- 右侧个人中心和积分兑换 -->
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <!-- 左侧导航栏垂直向下显示的功能 -->
+    
+    <a href="#">商家信息</a>
+    <a href="#">宠物用品管理</a>
+    <a href="#">订单管理</a>
+    <a href="#">评论管理</a>
+    <a href="#">积分管理</a>
+    </div>
+  <div>
+      <div class="content">
+   <h1>订单详情</h1>
+    <div class="order">
+      <div class="order-status">
+        <i class="fas fa-check-circle"></i><span>已完成</span>
+      </div>
+      <div class="order-id"><span>订单ID: 12345</span></div>
+      <div class="order-user-id"><span>用户ID: 10001</span></div>
+      <div class="order-time"><span>下单时间: 2023-11-10 10:30:00</span></div>
+      <div class="order-address">
+        <label>收货地址:</label>
+        <span>北京市海淀区中关村xxx</span>
+      </div>
+    </div>
+        <table>
+        <tr>
+            <th>商品</th>
+            <th>图片</th>
+            <th>价格</th>
+            <th>预计积分</th>
+        </tr>
+          <tr>
+        <td>狗粮</td>
+        <td>图片</td>
+        <td>101元</td>
+        <td>10积分</td>
+      </tr>
+<tr>
+        <td>猫粮</td>
+        <td>图片</td>
+        <td>101元</td>
+        <td>10积分</td>
+      </tr>
+
+    </table>
+    <h2>总计价格:202元</h2>    
+    
+</body>
+</html>

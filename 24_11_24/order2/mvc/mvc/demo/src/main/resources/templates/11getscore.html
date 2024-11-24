@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <style>
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 30px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);
+      width: 200px;
+      height: calc(100% - 40px);
+      position: fixed;
+      top: 40px;
+      left: 0;
+      z-index: 1;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-nav a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .left-nav a:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    /* 内容区域样式 */
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+      padding-top: 70px; /* Adjusted for fixed top-nav */
+      font-size: 16px;
+      background-color: #f9f9f9;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+
+    .edit-button {
+      background-color: orange;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .edit-button:hover {
+      background-color: darkorange;
+    }
+
+    /* 积分记录表格样式 */
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* 无记录样式 */
+    .no-records {
+      color: #999;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <a href="#">用户信息</a>
+    <a href="#">我的订单</a>
+    <a href="#">我的评论</a>
+    <a href="#">我的积分</a>
+  </div>
+  
+  <div class="content">
+
+    <table>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>活动名称</th>
+          <th>积分变化</th>
+        </tr>
+      </thead>
+      <tbody id="scoreTableBody">
+        <!-- 积分记录将通过JavaScript动态填充 -->
+      </tbody>
+    </table>
+    <p class="no-records" id="noRecords" style="display: none;">暂无积分记录</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 获取当前用户的 ID（假设从 session 或请求中获取）
+      const userID = document.getElementById('userID').textContent.trim();
+      
+      // 发送 AJAX 请求到 ScoreServlet 获取积分记录和剩余积分
+      fetch('/score?userID=' + userID)
+        .then(response => response.json())
+        .then(data => {
+          const scoreList = data.scoreList;
+          const remainingScore = data.remainingScore;
+          const tableBody = document.getElementById('scoreTableBody');
+          const noRecordsElem = document.getElementById('noRecords');
+          
+          // 清空现有记录
+          tableBody.innerHTML = '';
+          
+          // 填充积分记录
+          if (scoreList && scoreList.length > 0) {
+            scoreList.forEach(function(score) {
+              let row = tableBody.insertRow();
+              let dateCell = row.insertCell(0);
+              let activityCell = row.insertCell(1);
+              let scoreChangeCell = row.insertCell(2);
+              dateCell.textContent = score.date;
+              activityCell.textContent = score.activityName;
+              scoreChangeCell.textContent = score.change;
+            });
+          } else {
+            noRecordsElem.style.display = 'block'; // 显示无记录消息
+          }
+          
+          // 显示剩余积分
+          document.getElementById('remainingScore').textContent = remainingScore;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+</html>

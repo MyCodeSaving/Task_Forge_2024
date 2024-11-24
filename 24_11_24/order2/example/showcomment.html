@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* 原有样式 */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .top-nav {
+      background-color: #f5b971;
+      height: 70px;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .left-nav {
+      background-color: #f8d8a8;
+      width: 260px;
+      height: 100%;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      padding-top: 50px;
+      box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .left-nav button {
+      display: block;
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f5b971;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .left-nav button:hover {
+      background-color: #e6a864;
+      transform: scale(1.05);
+    }
+
+    .main-content {
+      margin-left: 280px;
+      padding: 60px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      max-width: 1000px;
+      margin-top: 120px;
+      margin-bottom: 80px;
+    }
+
+    h1 {
+      color: #d4945d;
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .query-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #f5b971;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6a864;
+    }
+
+    .comment-info {
+      background-color: #eaeaea;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-info p {
+      margin: 5px 0;
+    }
+
+    /* 新增媒体查询，适应移动端显示 */
+    @media (max-width: 600px) {
+      .top-nav {
+        font-size: 18px;
+        padding: 15px;
+      }
+
+      .left-nav {
+        width: 100%;
+        padding-top: 40px;
+      }
+
+      .left-nav button {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .query-section {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="top-nav">评论查询页面</div>
+<div class="left-nav">
+    <button onclick="window.location.href = 'comment.html';">返回</button>
+</div>
+<div class="main-content">
+    <h1>评论查询页面</h1>
+    <div class="query-section">
+        <input type="text" id="commentIdInput" placeholder="输入评论ID">
+        <input type="text" id="psIdInput" placeholder="输入产品ID">
+        <button id="queryButton">查询</button>
+    </div>
+    <div id="commentInfo"></div>
+</div>
+
+<script>
+    // 获取评论ID和产品ID的输入框以及查询按钮
+    const commentIdInput = document.getElementById('commentIdInput');
+    const psIdInput = document.getElementById('psIdInput');
+    const queryButton = document.getElementById('queryButton');
+
+    // 添加点击事件监听器
+    queryButton.addEventListener('click', async () => {
+        const commentId = commentIdInput.value;
+        const psId = psIdInput.value;
+        if (!commentId || !psId) {
+            alert('请输入评论ID和产品ID');
+            return;
+        }
+        try {
+            const response = await fetch('http://localhost:8082/getCommentByIdAndPsId', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `CommentID=${encodeURIComponent(commentId)}&PsID=${encodeURIComponent(psId)}`
+            });
+            if (response.ok) {
+                const commentInfo = await response.text();
+                displayCommentInfo(commentInfo);
+            } else {
+                alert('查询失败');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('发生错误，请检查控制台');
+        }
+    });
+
+    // 显示评论信息的函数
+    function displayCommentInfo(commentInfo) {
+        const commentInfoDiv = document.getElementById('commentInfo');
+        commentInfoDiv.innerHTML = ''; // 先清空之前的展示内容
+
+        const commentInfoDivElement = document.createElement('div');
+        commentInfoDivElement.classList.add('comment-info');
+        commentInfoDivElement.innerHTML = commentInfo;
+        commentInfoDiv.appendChild(commentInfoDivElement);
+    }
+</script>
+</body>
+
+</html>

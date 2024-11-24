@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商家注册页面</title>
+    <style>
+        /* 样式类似 signup.html，可以复用 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+      .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px; /* 可以根据需要调整高度 */
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="submit"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            width: 55%;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>商家注册</h2>
+        <form id="storeForm">
+            <label for="userID">用户ID:</label>
+            <input type="text" id="userID" name="userID" placeholder="请输入用户ID" required>
+
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+
+            <label for="phone">手机号:</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入手机号" required>
+
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" required>
+
+    <div class="center">
+        <input type="submit" value="注册">
+    </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('storeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const userID = document.getElementById('userID').value;
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/registerStore', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `userID=${encodeURIComponent(userID)}&password=${encodeURIComponent(password)}&username=${encodeURIComponent(username)}&phone=${encodeURIComponent(phone)}`
+            })
+            .then(response => response.text())
+            .then(result => {
+                if (result === "success") {
+                    alert("注册成功！");
+                    window.location.href = "/login"; // 注册成功后跳转到登录页面
+                } else {
+                    alert("注册失败，请重试！");
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

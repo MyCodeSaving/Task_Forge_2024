@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>查询用户积分页面</title>
+    <style>
+        /* 整体页面样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fef7e0, #f6e8c3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d4945d;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input[type="text"] {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"],
+        .return-button {
+            background-color: #f5b971;
+            color: #fff;
+            cursor: pointer;
+            width: 48%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover,
+        .return-button:hover {
+            background-color: #e6a864;
+        }
+
+        /* 新增媒体查询，适应移动端显示 */
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="text"] {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            input[type="submit"],
+            .return-button {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>查询用户积分</h2>
+    <form id="queryPointsForm">
+        <label for="userID">用户ID</label>
+        <input type="text" id="userID" name="userID" placeholder="请输入用户ID" required>
+
+        <div class="button-group">
+            <input type="submit" value="查询">
+            <input type="button" class="return-button" value="返回" onclick="window.location.href = 'score.html';"/>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('queryPointsForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const userID = document.getElementById('userID').value;
+
+        // 使用Fetch API发送查询积分请求
+        fetch('http://localhost:8082/searchScore', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `userID=${encodeURIComponent(userID)}`
+        })
+            .then(response => response.json())
+            .then(points => {
+                alert(`用户积分数量: ${points}`);
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+</body>
+
+</html>

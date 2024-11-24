@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>宠物用品详情</title>
+    <style>
+          /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 30px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3; /* 设置一个较高的z-index值 */
+    }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-gap: 20px;
+        align-items: center;
+      }
+      .image {
+        max-width: 100%;
+        height: auto;
+      }
+      .details {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-gap: 10px;
+        margin-top: 20px;
+      }
+      .intro {
+        margin-top: 20px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .orange-button {
+        color: white;
+        background-color: #FFA500;
+        border: none;
+        font-size: 24px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .comment-section {
+        margin-top: 40px;
+      }
+      .comment-star {
+        color: #FFD700;
+        font-size: 24px;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      strong {
+        font-weight: bold;
+      }
+      
+      //评论
+      .comment {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.username {
+  font-size: 16px;
+  font-weight: bold;
+}
+.comment-text {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.timestamp {
+  font-size: 12px;
+  color: #999;
+}
+    </style>
+  </head>
+  <body>
+     <div class="top-nav">
+    <!-- 左侧导航栏图标和首页链接 -->
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    
+    <!-- 右侧个人中心和积分兑换 -->
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+    <h1>宠物用品详情</h1>
+    <div class="container">
+      <img class="image" src="pet-supplies.jpg" alt="宠物用品图片">
+      <div class="details">
+        <div><strong>ID：</strong></div>
+        <div>10001</div>
+        <div><strong>名称：</strong></div>
+        <div>宠物牵引绳</div>
+        <div><strong>价格：</strong></div>
+        <div>99元</div>
+        <div><strong>分类：</strong></div>
+        <div>宠物玩具</div>
+        <div><strong>购买获得积分：</strong></div>
+        <div>10分</div>
+        <div><strong>兑换所需积分：</strong></div>
+        <div>500分</div>
+        <div><strong>库存：</strong></div>
+        <div>100</div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="orange-button">立即购买</button>
+    </div>    
+    <div class="intro">
+      <strong>简介：</strong>适用于中小型犬，长度可调节，防拉断，舒适耐用
+    </div>
+
+    <div class="comment-section">
+      <div>推荐指数：<span class="comment-star">★★★★★</span></div>  
+    </div>
+    <div class="comment">
+  <div class="user-info">
+    <img src="user-avatar.png" alt="User Avatar" class="avatar">
+    <span class="username">John Doe</span>
+  </div>
+  <p class="comment-text">这是用户的评论内容。</p>
+  <span class="timestamp">2023-11-18 10:30 AM</span>
+</div>
+  </body>
+</html>

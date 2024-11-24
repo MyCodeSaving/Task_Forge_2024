@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>订单统计</title>
+    <!-- 导入 Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* 设置页面布局样式 */
+       /* 顶部导航栏样式 */
+    .top-nav {
+      background-image: linear-gradient(to right, white, orange);
+      height: 30px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 3; /* 设置一个较高的z-index值 */
+    }
+    
+    /* 左侧导航栏样式 */
+    .left-nav {
+      background-image: linear-gradient(to right, white, orange);width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 50px; /* 调整top值，使左侧导航栏显示在顶部导航栏下方*/
+      left: 0;
+      z-index: 2; /* 设置一个较低的z-index值 */
+    }
+    
+    /* 左侧导航栏链接样式 */
+    .left-nav a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #333;
+      text-align:center;
+    }
+    
+    .content {
+      margin-left: 250px;
+      margin-top: 50px;
+      padding: 20px;
+    }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .chart-container {
+        margin-bottom: 40px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      th {
+        background: #f2f2f2;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      td:first-child {
+        font-weight: bold;
+      }
+
+      td:last-child {
+        text-align: right;
+      }
+
+      .table-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav">
+    <!-- 左侧导航栏图标和首页链接 -->
+    <a href="#"><img src="icon.png" alt="Logo"></a>
+    <a href="#">首页</a>
+    
+    <!-- 右侧个人中心和积分兑换 -->
+    <div style="float: right;">
+      <a href="#">个人中心</a>
+      <a href="#">积分兑换</a>
+    </div>
+  </div>
+  
+  <div class="left-nav">
+    <!-- 左侧导航栏垂直向下显示的功能 -->
+    
+    <a href="#">商家信息</a>
+    <a href="#">宠物用品管理</a>
+    <a href="#">订单管理</a>
+    <a href="#">评论管理</a>
+    <a href="#">积分管理</a>
+    </div>
+  <div>
+      <div class="content">
+    <div class="container">
+      <h1>订单统计</h1>
+      <!-- 绘制销售统计图表 -->
+      <div class="chart-container">
+        <canvas id="salesChart"></canvas>
+      </div>
+      <!-- 展示订单详情 -->
+      <div class="table-container">
+        <div class="table-title">订单详情</div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>下单时间</th>
+              <th>收货地址</th>
+              <th>订单状态</th>
+              <th>订单金额</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1001</td>
+              <td>2023-10-01 14:23:05</td>
+              <td>北京市海淀区xx路xx号</td>
+              <td>已完成</td>
+              <td>￥259.99</td>
+            </tr>
+            <tr>
+              <td>1002</td>
+              <td>2023-10-05 10:13:22</td>
+              <td>上海市浦东新区xx路xx号</td>
+              <td>已取消</td>
+              <td>￥139.99</td>
+            </tr>
+            <tr>
+              <td>1003</td>
+              <td>2023-10-12 19:44:01</td>
+              <td>广州市天河区xx路xx号</td>
+              <td>配送中</td>
+              <td>￥289.99</td>
+            </tr>
+            <tr>
+              <td>1004</td>
+              <td>2023-10-21 16:10:39</td>
+              <td>深圳市福田区xx路xx号</td>
+              <td>已完成</td>
+              <td>￥199.99</td>
+            </tr>
+            <tr>
+              <td>1005</td>
+              <td>2023-11-05 08:05:10</td>
+              <td>成都市武侯区xx路xx号</td>
+              <td>等待付款</td>
+              <td>￥489.99</td>
+            </tr>
+            <!-- 其他订单行 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // 模拟销售数据
+      var monthlySalesData = [50, 80, 100, 150, 200, 180, 220, 250, 300, 280, 240, 200]; // 月销量数据，可替换为实际数据
+      var yearlySalesData = [1200, 1500, 1800, 2200, 2500, 2800, 3000, 3200, 3500, 3800, 4000, 4200]; // 年销量数据，可替换为实际数据
+
+      var salesChart = new Chart(document.getElementById('salesChart'), {
+        type: 'line',
+        data: {
+          labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+          datasets: [{
+            label: '月销量',
+            data: monthlySalesData,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            fill: true
+          }, {
+            label: '年销量',
+            data: yearlySalesData,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true
+          }]
+        }
+      });
+    </script>
+  </body>
+</html>
