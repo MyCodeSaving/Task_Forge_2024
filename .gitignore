@@ -5,7 +5,7 @@
 
 # 忽略大型数据文件夹
 24_11_30/order2/data/
-./24_12_06/OpenSetRecognition/dataset1/
-./24_12_06/OpenSetRecognition/dataset2/
-./24_12_06/OpenSetRecognition/imgs/
-./24_12_06/OpenSetRecognition/mixed_dataset1/
+24_12_06/OpenSetRecognition/dataset1/
+24_12_06/OpenSetRecognition/dataset2/
+24_12_06/OpenSetRecognition/imgs/
+24_12_06/OpenSetRecognition/mixed_dataset1/

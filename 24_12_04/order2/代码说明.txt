@@ -1,0 +1,144 @@
+## 代码说明
+
+#### 数据预处理：
+
+读取数据：使用pandas读取CSV文件。
+检查数据：查看数据的基本信息、描述性统计和数据类型。
+处理缺失值：检查并处理缺失值（此处简单地删除含有缺失值的行，实际情况可根据需要选择填充或其他处理方式）。
+编码分类变量：使用LabelEncoder将分类变量转换为数值形式。
+特征缩放：对数值型特征进行标准化处理。
+
+#### 数据分析与挖掘：
+
+顾客口味偏好分析：计算各口味属性的平均值，了解顾客偏好。
+价格敏感度分析：分析顾客对价格属性的敏感度。
+消费频率预测：建立线性回归模型预测顾客的消费频率，并评估模型性能。
+顾客画像分类：使用KMeans聚类对顾客进行分类，并评估聚类效果。
+
+#### 数据可视化：
+
+顾客口味偏好可视化：使用条形图展示顾客对各口味属性的偏好程度。
+价格敏感度可视化：使用条形图展示顾客对价格属性的敏感度。
+消费频率分布：使用直方图展示消费频率的分布情况。
+聚类结果可视化：使用散点图展示不同聚类的顾客分布。
+
+#### 注意事项
+
+特征选择：根据实际数据和分析需求，可能需要选择更多相关特征或进行特征工程。
+模型选择：消费频率预测部分使用了线性回归模型，实际应用中可以尝试其他回归模型（如决策树、随机森林等）以提高预测性能。
+聚类数目：KMeans聚类的簇数设置为3，可根据数据实际情况通过肘部法则等方法确定最佳簇数。
+
+
+
+## 运行实况
+
+#### 控制台输出
+
+```bash
+数据概览：
+   Index yummy convenient spicy  ... Like Age      VisitFrequency  Gender
+0      1    No        Yes    No  ...   -3  61  Every three months  Female
+1      2   Yes        Yes    No  ...   +2  51  Every three months  Female
+2      3    No        Yes   Yes  ...   +1  62  Every three months  Female
+3      4   Yes        Yes    No  ...   +4  69         Once a week  Female
+4      5    No        Yes    No  ...   +2  49        Once a month    Male
+
+[5 rows x 16 columns]
+
+数据描述：
+             Index          Age
+count  1453.000000  1453.000000
+mean    727.000000    44.604955
+std     419.589283    14.221178
+min       1.000000    18.000000
+25%     364.000000    33.000000
+50%     727.000000    45.000000
+75%    1090.000000    57.000000
+max    1453.000000    71.000000
+
+数据类型：
+Index              int64
+yummy             object
+convenient        object
+spicy             object
+fattening         object
+greasy            object
+fast              object
+cheap             object
+tasty             object
+expensive         object
+healthy           object
+disgusting        object
+Like              object
+Age                int64
+VisitFrequency    object
+Gender            object
+dtype: object
+
+缺失值情况：
+Index             0
+yummy             0
+convenient        0
+spicy             0
+fattening         0
+greasy            0
+fast              0
+cheap             0
+tasty             0
+expensive         0
+healthy           0
+disgusting        0
+Like              0
+Age               0
+VisitFrequency    0
+Gender            0
+dtype: int64
+
+预处理后的数据：
+   Index  yummy  convenient  spicy  ...      Like       Age  VisitFrequency  Gender
+0      1      0           1      0  ... -1.212225  1.153258               0       0
+1      2      1           1      0  ...  0.392515  0.449839               0       0
+2      3      0           1      1  ...  0.071567  1.223600               0       0
+3      4      1           1      0  ...  1.034411  1.715993               4       0
+4      5      0           1      0  ...  0.392515  0.309156               3       1
+
+[5 rows x 16 columns]
+
+顾客口味偏好：
+convenient    0.907777
+fast          0.900206
+fattening     0.867171
+tasty         0.644184
+cheap         0.598761
+yummy         0.552650
+greasy        0.526497
+expensive     0.357880
+disgusting    0.242946
+healthy       0.198899
+spicy         0.093599
+dtype: float64
+
+价格敏感度：
+cheap        0.598761
+expensive    0.357880
+dtype: float64
+
+消费频率预测模型系数：
+[-0.03201214 -0.19853776  0.01199293 -0.10375504 -0.19229816  0.09120269
+  0.10901982 -0.09081018 -0.01745524 -0.02547962 -0.04976744 -0.07293592
+ -0.17617602 -0.06227621]
+
+模型评分（R^2）： -0.034251939391715336
+
+聚类轮廓系数： 0.39560406313718094
+```
+
+#### 图表
+
+<img src="./figs/myplot1.png">
+
+<img src="./figs/myplot2.png">
+
+<img src="./figs/myplot3.png">
+
+<img src="./figs/myplot4.png">

@@ -4,7 +4,7 @@ import joblib
 import chardet
 
 # 加载 JSON 数据集
-with open("./data/code/traindataset.json", "r") as f:
+with open("./data/code/updated_data2.json", "r") as f:
     dataset = json.load(f)
 patch_dir = "./data/code/patchfiles/"  # 补丁文件所在文件夹
 patch_files = {}
@@ -54,10 +54,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
 # 提取补丁类型作为标签
-labels = [patch["cwe"] for patch in dataset]
+labels = [patch["vulnerability_type"] for patch in dataset]
 
 # 划分训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(combined_features, labels, test_size=0.05, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(combined_features, labels, test_size=0.3, random_state=42)
 
 # 训练随机森林模型
 model = RandomForestClassifier()

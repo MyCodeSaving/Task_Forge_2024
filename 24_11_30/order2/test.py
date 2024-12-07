@@ -66,8 +66,11 @@ for i, patch in enumerate(dataset):
     prediction = model.predict([features])[0]
 
     vulnerability_type = prediction  # 获取漏洞类型
-
-    results.append([commit, probability, 1, vulnerability_type])
+    if vulnerability_type == '0':
+        prediction = 0
+    else:
+        prediction = 1
+    results.append([commit, probability, prediction, vulnerability_type])
 
 # 6. 输出结果
 with open('result.csv', 'w', newline='') as f:

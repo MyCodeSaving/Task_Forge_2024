@@ -1,0 +1,43 @@
+{
+    "incomes": [
+        {
+            "date": "2024-08-18",
+            "amount": 3000,
+            "category": "工资",
+            "remark": "八月工资"
+        },
+        {
+            "date": "2024-08-25",
+            "amount": 500,
+            "category": "奖金",
+            "remark": "绩效奖金"
+        },
+        {
+            "date": "2024-12-01",
+            "amount": 100.0,
+            "category": "test_income",
+            "remark": "test_income_b"
+        }
+    ],
+    "expenses": [
+        {
+            "date": "2024-08-20",
+            "amount": 200,
+            "category": "餐饮",
+            "remark": "聚餐"
+        },
+        {
+            "date": "2024-08-22",
+            "amount": 100,
+            "category": "交通",
+            "remark": "地铁卡充值"
+        },
+        {
+            "date": "2024-12-02",
+            "amount": 50.0,
+            "category": "test_out",
+            "remark": "test_out_b"
+        }
+    ],
+    "monthly_budget": 5000
+}
