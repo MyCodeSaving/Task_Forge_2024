@@ -1,0 +1,123 @@
+﻿  draw.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(163,5): warning C4013: “PrintRanking”未定义；假设外部返回 int
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(169,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(172,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(173,6): warning C4013: “initfile”未定义；假设外部返回 int
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(178,6): error C2371: “PrintRanking”: 重定义；不同的基类型
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(195,5): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(243,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(278,23): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(289,23): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(306,23): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(338,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(346,25): warning C4474: sprintf: 格式字符串中传递的参数太多
+      D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(346,25):
+      占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+  
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(347,14): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(354,27): warning C4474: sprintf: 格式字符串中传递的参数太多
+      D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(354,27):
+      占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+  
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(355,14): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(362,25): warning C4474: sprintf: 格式字符串中传递的参数太多
+      D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(362,25):
+      占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+  
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(363,14): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(371,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(392,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(346,3): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(354,3): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(362,3): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(439,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(446,10): warning C4013: “readfile”未定义；假设外部返回 int
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(461,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(473,15): warning C4013: “time”未定义；假设外部返回 int
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(486,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(490,13): warning C4311: “类型强制转换”: 从“char (*)[90]”到“long”的指针截断
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\draw.c(444,4): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  event.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\event.c(55,5): error C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  exceptio.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\exceptio.c(70,18): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\exceptio.c(69,9): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\exceptio.c(79,13): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  file.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(28,14): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(45,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(65,3): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(66,3): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(89,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(90,5): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(100,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(101,5): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(115,4): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(116,4): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(125,4): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(126,4): error C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(144,11): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(154,3): error C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(160,2): error C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(142,9): warning C4101: “j”: 未引用的局部变量
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(142,6): warning C4101: “i”: 未引用的局部变量
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\file.c(175,11): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  genlib.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\genlib.c(123,14): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\genlib.c(121,5): error C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\genlib.c(136,9): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  graphics.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(625,39): warning C4133: “函数”: 从“string”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(790,5): error C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(791,5): error C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(866,24): warning C4133: “=”: 从“LONG (__cdecl *)(HWND,UINT,WPARAM,LPARAM)”到“WNDPROC”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(867,26): warning C4133: “=”: 从“char [16]”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(873,22): warning C4133: “函数”: 从“char [16]”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(873,22): warning C4133: “函数”: 从“string”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(822,18): warning C4101: “consoleRect”: 未引用的局部变量
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1027,32): warning C4133: “函数”: 从“char [256]”到“LPWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1047,25): warning C4133: “=”: 从“char [16]”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1049,23): warning C4133: “=”: 从“LONG (__cdecl *)(HWND,UINT,WPARAM,LPARAM)”到“WNDPROC”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1155,16): warning C4244: “函数”: 从“WPARAM”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1161,20): warning C4244: “return”: 从“LRESULT”转换到“LONG”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1260,50): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1261,54): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1262,52): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1400,73): warning C4133: “函数”: 从“string”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1400,79): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1439,43): warning C4133: “函数”: 从“string”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1442,44): warning C4133: “函数”: 从“char [51]”到“LPWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1593,35): warning C4133: “函数”: 从“string”到“LPCWSTR”的类型不兼容
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1593,41): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1648,49): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\graphics.c(1943,20): warning C4244: “return”: 从“WPARAM”转换到“int”，可能丢失数据
+  imgui.c
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(31,1): error C1189: #error:  EasyX is only for C++
+  (编译源文件“src/main/imgui.c”)
+  
+  menu.c
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(31,1): error C1189: #error:  EasyX is only for C++
+  (编译源文件“src/main/menu.c”)
+  
+  random.c
+  simpio.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\simpio.c(145,13): error C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\simpio.c(157,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  strlib.c
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(50,12): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(51,12): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(53,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(54,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(63,11): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(76,11): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(82,5): error C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(100,13): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(108,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(109,5): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(168,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(182,27): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(194,5): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(206,9): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(216,5): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Code\Task_Forge\24_12_09\FlappyBird_C\FlappyBird\FlappyBird\FlappyBird\src\main\strlib.c(226,9): error C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  正在生成代码...

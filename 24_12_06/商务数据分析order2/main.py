@@ -121,3 +121,78 @@ plt.xlabel('原价（标准化）')
 plt.ylabel('售价（标准化）')
 plt.legend(title='Cluster')
 plt.show()
+
+
+# 新增子分析
+
+# 新增01
+# 热销书籍分析
+# 评论数最多的书籍
+top_rated_books = data[['书名', '评论数']].sort_values(by='评论数', ascending=False).head(10)
+print("\n评论数最高的书籍：")
+print(top_rated_books)
+
+# 可视化
+plt.figure(figsize=(12, 6))
+sns.barplot(x='评论数', y='书名', data=top_rated_books, palette='cool')
+plt.title('评论数最多的书籍')
+plt.xlabel('评论数（标准化）')
+plt.ylabel('书名')
+plt.show()
+
+# 新增02
+# 不同排行榜类型的价格分布
+# 绘制箱线图
+plt.figure(figsize=(12, 6))
+sns.boxplot(x='排行榜类型', y='售价', data=data, palette='Set3')
+plt.title('不同排行榜类型的售价分布')
+plt.xlabel('排行榜类型')
+plt.ylabel('售价（标准化）')
+plt.show()
+
+# 新增03
+# 折扣比例与售价关系分析
+# 绘制散点图
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='折扣比例', y='售价', data=data, palette='viridis')
+plt.title('折扣比例与售价关系分析')
+plt.xlabel('折扣比例')
+plt.ylabel('售价（标准化）')
+plt.show()
+
+# 新增04
+# 评论数与折扣比例的关系
+# 绘制散点图
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='折扣比例', y='评论数', data=data, palette='plasma')
+plt.title('评论数与折扣比例关系分析')
+plt.xlabel('折扣比例')
+plt.ylabel('评论数（标准化）')
+plt.show()
+
+# 新增05
+# 热门价格段的分析
+# 绘制价格分布直方图
+plt.figure(figsize=(10, 6))
+sns.histplot(data['售价'], bins=20, kde=True, color='green', label='售价')
+sns.histplot(data['原价'], bins=20, kde=True, color='orange', label='原价')
+plt.title('书籍售价和原价分布')
+plt.xlabel('价格（标准化）')
+plt.ylabel('数量')
+plt.legend()
+plt.show()
+
+# 新增06
+# 聚类结果深入分析
+# 聚类结果均值
+cluster_means = data.groupby('Cluster')[['原价', '售价', '折扣比例', '评论数']].mean()
+print("\n聚类结果特征均值：")
+print(cluster_means)
+
+# 可视化
+cluster_means.plot(kind='bar', figsize=(10, 6), colormap='Set2')
+plt.title('聚类结果特征均值分析')
+plt.ylabel('均值（标准化）')
+plt.xlabel('Cluster')
+plt.legend(title='特征')
+plt.show()

@@ -1,0 +1,10 @@
+﻿  main.c
+D:\Code\Task_Forge\24_12_07\WMS_C\WMS\main.c(344,32): warning C4474: scanf_s: 格式字符串中传递的参数太多
+      D:\Code\Task_Forge\24_12_07\WMS_C\WMS\main.c(344,32):
+      占位符和其参数预计 1 可变参数，但提供的却是 2 参数
+  
+D:\Code\Task_Forge\24_12_07\WMS_C\WMS\main.c(432,32): warning C4474: scanf_s: 格式字符串中传递的参数太多
+      D:\Code\Task_Forge\24_12_07\WMS_C\WMS\main.c(432,32):
+      占位符和其参数预计 1 可变参数，但提供的却是 2 参数
+  
+  WMS.vcxproj -> D:\Code\Task_Forge\24_12_07\WMS_C\WMS\x64\Debug\WMS.exe

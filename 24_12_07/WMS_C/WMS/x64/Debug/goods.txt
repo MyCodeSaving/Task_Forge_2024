@@ -1,0 +1,2 @@
+﻿1 pen_black 01 zhi 2.00 100 500
+2 pen_red 01 zhi 2.00 100 500

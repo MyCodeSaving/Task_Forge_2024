@@ -1,0 +1,20 @@
+## 大作业内容与要求
+
+题目1:在下面提供的Task1和Task2中任选一个进行学习，并完成任务中的仿真实验。然后撰写读书报告。总分10分，其中文档6分，结果和代码4分;
+题目2:在下面提供的Task3-Task5中任选一个 进行学习，并完成任务中的仿真实验。然后撰写读书报告。总分10分， 其中文档6分，结果和代码4分。
+读书报告的要求:
+
+- 包括但不限于解决的问题的背景、模型及其分析(优化问题的目标函数及其性质，比如是否为凸函数(如果是凸函数，在迭代点的次梯度/梯度是什么)、光滑函数、强凸函数及其原因、可行域是什么)、方法(若是(次)梯度投影法,请描述投影子问题、对应的解是什么及为什么;如用条件梯度法，请描述其中的线性优化子问题、对应的解是什么及为什么、步长是如何确定的及为什么)、数值实验(注意指出(次)梯度法和投影(次)梯度法中的步长选取)和结果分析(注意从解的质量和计算代价两方面评价算法的性能)。
+- 务必描述清楚自己遇到的问题及解决办法。欢迎对所网页提供的学习内容进行补充和评价(包括但不限于自己的理解和上面的提示)，也欢迎设计新实验/提供新应用。
+- 所有代码作为独立可执行文件或者附录提交。
+
+Task1梯度法初探(Lecture 4: Playing with gradient methods)
+https://ee227c.github.io/code/lecture4.html
+Task2核范数、矩阵补全和条件梯度法(5 Nuclear norm, matrix completion, conditional gradient)
+https://ee227c.github.io/code/lecture5.html
+Task3交替极小化和期望最大化(19 Alternating minimization and EM)
+https://ee227c.github.io/code/lecture19.html
+Task4无导数优化、策略梯度和控制(20 Black-box optimization and reinforcement learning)
+https://ee227c.github.io/code/lecture20.html
+Task5二阶方法的实验(24 Second-order optimization)
+https://ee227c.github.io/code/lecture24.html

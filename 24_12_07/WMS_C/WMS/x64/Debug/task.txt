@@ -1,0 +1,166 @@
+﻿# 仓库管理系统                                                                
+
+## 项目说明                                                               
+
+### 1.1 项目背景                                                              
+
+本项目旨在开发一个完整的仓库管理系统，通过实现商品入库、出库、库存管理等核心业务功能，帮助学生深入理解数据结构的实际应用，培养系统化的业务流程处理能力。项目注重实践性，让学生在开发过程中掌握完整的软件开发流程。 
+
+### 1.2 项目目标                                                              
+
+#### 技能目标                                                                  
+
+-    掌握链表等数据结构的实际应用 
+
+-    熟练运用常用排序算法 
+
+-    掌握文件操作与数据处理技术 
+
+-    深入理解仓储业务流程 
+
+-    培养系统分析与设计思维 
+
+-    提升编程实践能力 
+
+
+#### 产品目标                                                                  
+
+-    实现高效的商品信息管理 
+
+-    开发准确的库存管理功能 
+
+-    完成完整的出入库业务流程 
+
+-    提供全面的数据统计分析 
+
+-    设计友好的操作交互界面 
+
+
+## 核心功能需求                                                             
+
+### 2.1 数据结构设计                                                            
+
+```
+ // 商品信息结构 
+  struct goods { 
+     char code[20];         // 商品编码 
+     char name[50];         // 商品名称 
+     char category[30];     // 商品类别 
+     char unit[10];         // 计量单位 
+     float price;           // 单价 
+     int min_stock;         // 最低库存 
+     int max_stock;         // 最高库存 
+  }; 
+
+  // 库存信息结构 
+  struct stock { 
+     char goods_code[20];   // 商品编码 
+     int quantity;          // 库存数量 
+     char location[30];     // 库位 
+     char batch_no[20];     // 批次号 
+     char expire_date[20];  // 有效期 
+  }; 
+
+ // 出入库记录结构 
+  struct record { 
+     char record_id[20];    // 记录编号 
+     char goods_code[20];   // 商品编码 
+     int quantity;          // 数量 
+     int type;              // 类型（入库/出库） 
+     char operator[50];     // 操作员 
+     char date[20];         // 操作时间 
+     char note[100];        // 备注 
+  }; 
+```
+
+### 2.2 功能细则                                                               
+
+#### 2.2.1 基础信息管理                                                       
+
+ 1. 商品管理 
+
+      - 商品信息维护（增删改查） 
+
+      - 商品分类体系管理 
+
+ 2. 库位管理 
+
+      - 灵活的库位设置 
+
+      - 库位分配策略 
+
+#### 2.2.2 库存管理功能                                                       
+
+ 1. 入库管理 
+
+      - 入库登记处理 
+
+      - 质检记录跟踪 
+
+      - 库位分配优化 
+
+ 2. 出库管理 
+
+      - 快速出库单处理 
+
+      - 拣货管理 
+
+      - 发货确认流程 
+
+#### 2.2.3 统计分析功能                                                       
+
+ 1. 库存分析 
+
+      - 库存盘点 
+
+      - 库存预警 
+
+      - 积压商品分析 
+
+ 2. 出入库分析 
+
+      - 商品周转率统计 
+
+      - 进销存数据分析 
+
+#### ﻿2.2.4 数据处理                                             
+
+- 文本数据读取 
+
+- 文本数据写入 
+
+## 代码架构
+
+#### 函数列表
+
+```c
+void menu();
+void goods_menu();
+void stock_menu();
+void record_menu();
+void statistics_menu();
+
+void add_goods();
+void view_goods();
+void delete_goods();
+void modify_goods();
+void classify_goods();
+
+void add_category();
+void view_categories();
+void delete_category();
+    
+void add_stock();
+void view_stock();
+
+void record_entry();
+void view_records();
+void record_exit();
+
+void stock_analysis(); // 库存盘点
+// void allocate_stock(); // 库位分配
+// void quality_check(); // 质检记录
+void inventory_warning(); // 库存预警
+void turnover_rate_analysis(); // 商品周转率统计
+```
+

@@ -1,0 +1,229 @@
+﻿  BlackWhiteChessAI.cpp
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(35,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(35,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [14]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(35,21):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(35,2):
+      尝试匹配参数列表“(IMAGE *, const char [14])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(36,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(36,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [14]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(36,21):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(36,2):
+      尝试匹配参数列表“(IMAGE *, const char [14])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(37,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(37,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [14]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(37,21):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(37,2):
+      尝试匹配参数列表“(IMAGE *, const char [14])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(38,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(38,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [15]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(38,21):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(38,2):
+      尝试匹配参数列表“(IMAGE *, const char [15])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(39,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(39,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [15]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(39,21):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(39,2):
+      尝试匹配参数列表“(IMAGE *, const char [15])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(42,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [23]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(42,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(42,2):
+      尝试匹配参数列表“(const char [23], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(43,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [19]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(43,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(43,2):
+      尝试匹配参数列表“(const char [19], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(44,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [19]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(44,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(44,2):
+      尝试匹配参数列表“(const char [19], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(45,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [19]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(45,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(45,2):
+      尝试匹配参数列表“(const char [19], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(46,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [19]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(46,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(46,2):
+      尝试匹配参数列表“(const char [19], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(51,2): error C2665: “loadimage”: 没有重载函数可以转换所有参数类型
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include\easyx.h(258,6):
+      可能是“void loadimage(IMAGE *,LPCTSTR,int,int,bool)”
+          D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(51,2):
+          “void loadimage(IMAGE *,LPCTSTR,int,int,bool)”: 无法将参数 2 从“const char [14]”转换为“LPCTSTR”
+              D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(51,20):
+              指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(51,2):
+      尝试匹配参数列表“(IMAGE *, const char [14])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(54,2): error C2664: “BOOL SetWindowTextW(HWND,LPCWSTR)”: 无法将参数 2 从“const char [11]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(54,27):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winuser.h(8929,1):
+      参见“SetWindowTextW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(54,2):
+      尝试匹配参数列表“(HWND, const char [11])”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(183,9): error C2664: “int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)”: 无法将参数 2 从“char [50]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(183,25):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winuser.h(9180,1):
+      参见“MessageBoxW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(183,9):
+      尝试匹配参数列表“(HWND, char [50], const char [5], long)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(185,9): error C2664: “int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)”: 无法将参数 2 从“char [50]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(185,25):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winuser.h(9180,1):
+      参见“MessageBoxW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(185,9):
+      尝试匹配参数列表“(HWND, char [50], const char [5], long)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(187,9): error C2664: “int MessageBoxW(HWND,LPCWSTR,LPCWSTR,UINT)”: 无法将参数 2 从“char [50]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(187,25):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winuser.h(9180,1):
+      参见“MessageBoxW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(187,9):
+      尝试匹配参数列表“(HWND, char [50], const char [5], long)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(266,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [37]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(266,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(266,2):
+      尝试匹配参数列表“(const char [37], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(284,5): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [26]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(284,19):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(284,5):
+      尝试匹配参数列表“(const char [26], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(301,4): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [26]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(301,18):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(301,4):
+      尝试匹配参数列表“(const char [26], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(309,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [23]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(309,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(309,2):
+      尝试匹配参数列表“(const char [23], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(311,3): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [26]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(311,17):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(311,3):
+      尝试匹配参数列表“(const char [26], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(313,3): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [26]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(313,17):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(313,3):
+      尝试匹配参数列表“(const char [26], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(315,3): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [26]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(315,17):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(315,3):
+      尝试匹配参数列表“(const char [26], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(328,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [24]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(328,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(328,2):
+      尝试匹配参数列表“(const char [24], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(329,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [20]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(329,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(329,2):
+      尝试匹配参数列表“(const char [20], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(330,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [20]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(330,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(330,2):
+      尝试匹配参数列表“(const char [20], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(331,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [20]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(331,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(331,2):
+      尝试匹配参数列表“(const char [20], int, int, int)”时
+  
+D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(332,2): error C2664: “MCIERROR mciSendStringW(LPCWSTR,LPWSTR,UINT,HWND)”: 无法将参数 1 从“const char [20]”转换为“LPCWSTR”
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(332,16):
+      指向的类型不相关; 转换需要 reinterpret_cast、C 样式强制转换或带圆括号的函数样式强制转换
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\mciapi.h(87,1):
+      参见“mciSendStringW”的声明
+      D:\Code\Task_Forge\24_12_09\Game_C\BlackWhiteChess_ai\BlackWhiteChess\BlackWhiteChessAI.cpp(332,2):
+      尝试匹配参数列表“(const char [20], int, int, int)”时
+  
