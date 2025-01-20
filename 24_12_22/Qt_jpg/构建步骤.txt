@@ -1,0 +1,10 @@
+1. 在主面版创建项目；
+2. 选择Qt Widgets Application;
+3. 自己输入名称和项目要放在的路径，点击下一步；
+4. Build system选择CMake，下一步；
+5. Class Information这里不用改，下一步；
+6. Translation File这里不用改，下一步；
+7. 构建套件选择：
+   ![image-20241223114919305](.\figs\1.png)
+
+8. Project Management可以都选择无；

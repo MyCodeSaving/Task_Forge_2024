@@ -1,0 +1,243 @@
+## 代码解释
+
+#### **1. 头文件 (`mainwindow.h`)**
+
+```cpp
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QImage>
+#include <QPixmap>
+#include <QString>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void openImage();  // 打开图片
+    void saveImage();  // 保存图片
+    void compressImage(); // 压缩图片
+    void adjustImage();  // 调整图片属性（亮度/对比度等）
+
+private:
+    Ui::MainWindow *ui;
+    QImage currentImage;  // 当前加载的图片
+};
+#endif // MAINWINDOW_H
+```
+
+##### **头文件解释：**
+
+- **QMainWindow**: 继承自 `QMainWindow`，表示应用的主窗口。
+- **QImage**: 用来存储和处理图像数据的类。
+- **QPixmap**: 用于处理显示图像的类。图像通常通过 `QPixmap` 显示在 UI 控件中。
+- **QString**: 用来处理字符串。
+- **private slots**:
+  - `openImage()`: 打开图片并加载到窗口。
+  - `saveImage()`: 将当前的图片保存到指定路径。
+  - `compressImage()`: 压缩图片并更新显示。
+  - `adjustImage()`: 调整图像的亮度和对比度。
+- **private**:
+  - `Ui::MainWindow *ui`: 这是 Qt 自动生成的类，用于与 UI 控件交互。
+  - `QImage currentImage`: 用来保存当前加载的图片。
+
+#### **2. 源文件 (`mainwindow.cpp`)**
+
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QImageWriter>
+#include <QImageReader>
+#include <QBuffer>
+#include <QColor>
+```
+
+##### **头文件包含解释：**
+
+- **QFileDialog**: 用于打开和保存文件的对话框。
+- **QMessageBox**: 用于弹出信息框，例如警告框。
+- **QImageWriter**: 用于保存图片，支持压缩设置（例如 JPEG 格式）。
+- **QImageReader**: 用于读取图像文件（虽然在这里没有直接使用，但也可能用于扩展）。
+- **QBuffer**: 在内存中处理二进制数据，常用于图像压缩。
+- **QColor**: 用于处理图像的颜色和像素。
+
+##### **构造函数和连接信号与槽：**
+
+```cpp
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    // 连接按钮和槽函数
+    connect(ui->btnOpen, &QPushButton::clicked, this, &MainWindow::openImage);
+    connect(ui->btnSave, &QPushButton::clicked, this, &MainWindow::saveImage);
+    connect(ui->btnCompress, &QPushButton::clicked, this, &MainWindow::compressImage);
+    connect(ui->sliderBrightness, &QSlider::valueChanged, this, &MainWindow::adjustImage);
+    connect(ui->sliderContrast, &QSlider::valueChanged, this, &MainWindow::adjustImage);
+}
+```
+
+- **`ui->setupUi(this)`**: 初始化 UI 元素。
+
+- `connect()`
+
+  : 用于将控件的事件（信号）与槽（函数）进行连接。
+
+  - `ui->btnOpen` 按钮的点击事件与 `openImage()` 槽函数连接。
+  - `ui->btnSave` 按钮的点击事件与 `saveImage()` 槽函数连接。
+  - `ui->btnCompress` 按钮的点击事件与 `compressImage()` 槽函数连接。
+  - `ui->sliderBrightness` 和 `ui->sliderContrast` 的值变化事件与 `adjustImage()` 槽函数连接。
+
+------
+
+##### **析构函数：**
+
+```cpp
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+```
+
+- **`delete ui`**: 在析构函数中释放 UI 资源，避免内存泄漏。
+
+------
+
+##### **打开图片（`openImage()`）**
+
+```cpp
+void MainWindow::openImage()
+{
+    QString filePath = QFileDialog::getOpenFileName(this, "打开图片", "", "Images (*.jpg *.jpeg *.png)");
+    if (!filePath.isEmpty())
+    {
+        currentImage.load(filePath);
+        ui->labelImage->setPixmap(QPixmap::fromImage(currentImage).scaled(ui->labelImage->size(), Qt::KeepAspectRatio));
+    }
+}
+```
+
+- **`QFileDialog::getOpenFileName()`**: 弹出文件选择对话框，让用户选择图片文件。
+- **`currentImage.load(filePath)`**: 使用选中的路径加载图片。
+- **`QPixmap::fromImage(currentImage)`**: 将 `QImage` 转换为 `QPixmap`，方便显示。
+- **`scaled(ui->labelImage->size(), Qt::KeepAspectRatio)`**: 将图片按控件大小缩放，并保持长宽比。
+
+------
+
+##### **保存图片（`saveImage()`）**
+
+```cpp
+void MainWindow::saveImage()
+{
+    QString savePath = QFileDialog::getSaveFileName(this, "保存图片", "", "JPEG (*.jpg);;PNG (*.png)");
+    if (!savePath.isEmpty())
+    {
+        currentImage.save(savePath);
+    }
+}
+```
+
+- **`QFileDialog::getSaveFileName()`**: 弹出文件保存对话框，用户选择保存的路径和文件名。
+- **`currentImage.save(savePath)`**: 将 `QImage` 保存到指定的路径。
+
+------
+
+##### **压缩图片（`compressImage()`）**
+
+```cpp
+void MainWindow::compressImage()
+{
+    if (currentImage.isNull())
+    {
+        QMessageBox::warning(this, "警告", "请先加载图片！");
+        return;
+    }
+
+    // 获取压缩质量（QSlider）
+    int quality = ui->sliderQuality->value();
+
+    QByteArray buffer;
+    QBuffer qBuffer(&buffer);
+    qBuffer.open(QIODevice::WriteOnly);
+
+    // 使用 QImageWriter 进行压缩
+    QImageWriter writer(&qBuffer, "JPEG");
+    writer.setQuality(quality);
+    writer.write(currentImage);
+
+    // 更新图片
+    currentImage.loadFromData(buffer);
+    ui->labelImage->setPixmap(QPixmap::fromImage(currentImage).scaled(ui->labelImage->size(), Qt::KeepAspectRatio));
+}
+```
+
+- **检查图片是否为空**: 如果图片为空（没有加载图片），弹出警告框提示用户先加载图片。
+
+- **获取压缩质量**: 从 `sliderQuality` 获取压缩质量（0 到 100 之间，100 为最佳质量）。
+
+- QImageWriter
+
+  : 用于将图片写入到内存中，并应用设置的压缩质量。
+
+  - **`QImageWriter writer(&qBuffer, "JPEG")`**: 设置图片压缩格式为 JPEG。
+  - **`writer.setQuality(quality)`**: 设置压缩质量。
+
+- **加载压缩后的图片**: 将压缩后的图片数据加载回来，并更新显示。
+
+------
+
+##### **调整图片（`adjustImage()`）**
+
+```cpp
+void MainWindow::adjustImage()
+{
+    if (currentImage.isNull())
+        return;
+
+    QImage adjustedImage = currentImage;
+    int brightness = ui->sliderBrightness->value();
+    int contrast = ui->sliderContrast->value();
+
+    for (int y = 0; y < adjustedImage.height(); ++y)
+    {
+        for (int x = 0; x < adjustedImage.width(); ++x)
+        {
+            QColor color = adjustedImage.pixelColor(x, y);
+
+            // 修改亮度和对比度
+            int r = qBound(0, color.red() * contrast / 100 + brightness, 255);
+            int g = qBound(0, color.green() * contrast / 100 + brightness, 255);
+            int b = qBound(0, color.blue() * contrast / 100 + brightness, 255);
+
+            adjustedImage.setPixelColor(x, y, QColor(r, g, b));
+        }
+    }
+
+    currentImage = adjustedImage;
+    ui->labelImage->setPixmap(QPixmap::fromImage(currentImage).scaled(ui->labelImage->size(), Qt::KeepAspectRatio));
+}
+```
+
+- 调整亮度和对比度
+
+  : 遍历每个像素，根据亮度和对比度值调整 RGB 通道。
+
+  - **`color.red() \* contrast / 100 + brightness`**: 根据对比度和亮度调整颜色值。
+  - **`qBound(0, value, 255)`**: 保证颜色值在 0 到 255 之间。
+
+- **更新图像**: 调整后的图片重新显示在 UI 上。
+

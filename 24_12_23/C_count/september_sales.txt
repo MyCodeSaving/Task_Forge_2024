@@ -1,0 +1,6 @@
+101 | mango | 41 | 10%_off
+103 | banana | 56 | none
+105 | pineapple | 71 | none
+106 | blueberry | 88 | 10%_off
+108 | cucumber | 38 | none
+110 | broccoli | 73 | 10%_off

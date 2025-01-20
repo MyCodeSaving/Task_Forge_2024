@@ -13,3 +13,6 @@
 24_12_06/OpenSetRecognition/mixed_dataset1/
 24_12_14/SVM/images/
 24_12_15/fgsm_lab/data/
+
+# 忽略builddir
+24_12_22/Qt_jpg/Jpg_process/build/

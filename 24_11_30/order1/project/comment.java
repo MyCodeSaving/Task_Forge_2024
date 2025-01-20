@@ -1,3 +1,5 @@
+// 评论类
+
 public class comment {
     private int id;
     private String title;

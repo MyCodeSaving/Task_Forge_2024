@@ -1,0 +1,14 @@
+prono fullname price
+101 mango 3.5
+102 orange 2.4
+103 banana 2.8
+104 watermelon 3.7
+105 pineapple 4.1
+106 blueberry 5.0
+107 cherry 5.5
+108 cucumber 1.9
+109 cabbage 2.0
+110 broccoli 3.1
+111 celery 1.9
+112 pea 4.5
+113 carrot 2.3
